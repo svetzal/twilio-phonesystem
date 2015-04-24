@@ -1,14 +1,16 @@
 <?php
+require_once(__DIR__ . "/TwilioResponseBuilder.inc.php");
 
-require_once(__DIR__ . "/TwilioResponseBuilder.inc.php.php");
-
-abstract class Menu {
-    protected $mojility;
+class Menu {
+    protected $menuCode;
+    protected $responseBuilder;
     protected $digitHandlers = array();
     protected $defaultDigitHandler = null;
+    protected $mainHandler = null;
 
-    function __construct() {
-        $this->mojility = new TwilioResponseBuilder();
+    function __construct($menuCode) {
+        $this->menuCode = $menuCode;
+        $this->responseBuilder = new TwilioResponseBuilder();
     }
 
     function registerDigitHandler($digits, $handler) {
@@ -19,6 +21,10 @@ abstract class Menu {
         $this->defaultDigitHandler = $handler;
     }
 
+    function registerMainHandler($handler) {
+        $this->mainHandler = $handler;
+    }
+
     function getDigitHandler($digits) {
         if (array_key_exists($digits, $this->digitHandlers)) {
             return $this->digitHandlers[$digits];
@@ -27,13 +33,21 @@ abstract class Menu {
         }
     }
 
+    function getMenuCode() {
+        return $this->menuCode;
+    }
+
+    function matchesMenuCode($code) {
+        return $this->menuCode == $code;
+    }
+
     function handleDigits($digits) {
         echo $this->getDigitHandler($digits);
     }
 
-    abstract function menuCode();
-
-    abstract function present();
+    function present() {
+        echo $this->mainHandler;
+    }
 
 }
 

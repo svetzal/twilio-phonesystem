@@ -1,6 +1,5 @@
 <?php
-
-require_once(__DIR__ . "/TwilioDirectiveBuilder.inc.php.php");
+require_once(__DIR__ . "/TwilioDirectiveBuilder.inc.php");
 
 class TwilioResponseBuilder {
 

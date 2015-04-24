@@ -1,18 +1,6 @@
 <?php
-require(__DIR__ . "/../inc/MenuRegistry.inc.php");
-require(__DIR__ . "/../inc/Menu.inc.php");
-
-class MockMenu1 extends Menu {
-  function menuCode() { return '1'; }
-  function present() {}
-  function handleDigits($digits) {}
-}
-
-class MockMenu2 extends Menu {
-  function menuCode() { return '2'; }
-  function present() {}
-  function handleDigits($digits) {}
-}
+require_once(__DIR__ . "/../inc/MenuRegistry.inc.php");
+require_once(__DIR__ . "/../inc/Menu.inc.php");
 
 class MenuRegistryTest extends PHPUnit_Framework_TestCase {
 
@@ -23,8 +11,8 @@ class MenuRegistryTest extends PHPUnit_Framework_TestCase {
   }
 
   function testRegistryByCode() {
-    $menu1 = new MockMenu1();
-    $menu2 = new MockMenu2();
+    $menu1 = new Menu('1');
+    $menu2 = new Menu('2');
 
     $this->registry->addMenu($menu1);
     $this->registry->addMenu($menu2);

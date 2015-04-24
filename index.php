@@ -5,10 +5,7 @@ require("settings.php");
 require("inc/ParameterParser.inc.php");
 require("inc/MenuRegistry.inc.php");
 require("inc/MenuDispatcher.inc.php");
-
-require("inc/menus/MainMenu.inc.php");
-require("inc/menus/ConferenceMenu.inc.php");
-require("inc/menus/OutgoingMenu.inc.php");
+require("inc/MenuBuilder.inc.php");
 
 define("EOL", "\n");
 
@@ -21,9 +18,10 @@ header("content-type: text/xml");
 $params = new ParameterParser();
 
 $registry = new MenuRegistry();
-$registry->addMenu(new MainMenu());
-$registry->addMenu(new ConferenceMenu());
-$registry->addMenu(new OutgoingMenu());
+$menuBuilder = new MenuBuilder();
+$registry->addMenu($menuBuilder->mainMenu());
+$registry->addMenu($menuBuilder->conferenceMenu());
+$registry->addMenu($menuBuilder->outgoingMenu());
 
 $dispatcher = new MenuDispatcher($params, $registry);
 

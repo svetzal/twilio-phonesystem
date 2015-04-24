@@ -11,7 +11,7 @@ class MenuRegistry {
   }
 
   function addMenu($menu) {
-    $this->menus[$menu->menuCode()] = $menu;
+    $this->menus[$menu->getMenuCode()] = $menu;
     if (!isset($this->default)) $this->default = $menu;
   }
 
