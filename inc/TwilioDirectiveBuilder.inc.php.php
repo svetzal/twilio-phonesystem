@@ -1,6 +1,6 @@
 <?php
 
-class TwilioResponse {
+class TwilioDirectiveBuilder {
 
   private $directives = array();
   private $voice = "woman";
@@ -9,7 +9,7 @@ class TwilioResponse {
     return $bool ? 'true':'false';
   }
 
-  function gatherWithSay($message, $timeout=2, $action=MAIN_MENU) {
+  function gatherWithSpeech($message, $timeout=2, $action=MAIN_MENU) {
     $d = '<Gather action="'.$action.'" timeout="'.$timeout.'">';
     $d .= '<Say voice="'.$this->voice.'">'.$message.'</Say>';
     $d .= '<Pause length="8"/>';
