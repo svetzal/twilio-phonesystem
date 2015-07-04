@@ -14,18 +14,18 @@ class MenuBuilder {
         $menu = new Menu('m');
 
         $menu->registerDigitHandler(
-            '1',
+            '0',
             $this->responseBuilder->forward(
-                SALES_CELL,
-                "Sorry, nobody is available in sales to respond at this time. Please leave a message and we will return your call as soon as possible."
+                SUPPORT_CELL,
+                "Sorry, nobody is available at this time. Please leave a message and we will return your call as soon as possible."
             )
         );
 
         $menu->registerDigitHandler(
-            '2',
+            '1',
             $this->responseBuilder->forward(
-                SUPPORT_CELL,
-                "Sorry, nobody is available in support to respond at this time. Please leave a message and we will return your call as soon as possible."
+                SALES_CELL,
+                "Sorry, our sales staff is unavailable right now. Please leave a message and we will return your call as soon as possible."
             )
         );
 
@@ -52,7 +52,7 @@ class MenuBuilder {
         );
 
         $menu->registerMainHandler(
-            $this->responseBuilder->menuWithAudio('http://mojility.ca/phone/audio/greeting.mp3', MAIN_MENU)
+            $this->responseBuilder->menuWithAudio('http://mojility.ca/phone/audio/greeting-2015-04-30.mp3', MAIN_MENU)
         );
 
         return $menu;
