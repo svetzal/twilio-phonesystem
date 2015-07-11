@@ -1,7 +1,9 @@
 language: php
 php:
   - 5.5
-script: phpunit --coverage-clover build/logs/clover.xml tests
+script:
+  - composer.phar install
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests
 after_script:
   - vendor/bin/test-reporter
 addons:
