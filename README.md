@@ -1,7 +1,7 @@
 Twilio Phone System
 ===================
 
-[![Code Climate](https://codeclimate.com/github/svetzal/twilio-phonesystem/badges/gpa.svg)](https://codeclimate.com/github/svetzal/twilio-phonesystem)
+[![Code Climate](https://codeclimate.com/github/svetzal/twilio-phonesystem/badges/gpa.svg)](https://codeclimate.com/github/svetzal/twilio-phonesystem) [![Test Coverage](https://codeclimate.com/github/Mojility/Coaching-Cohesion-PHP-FizzBuzz/badges/coverage.svg)](https://codeclimate.com/github/Mojility/Coaching-Cohesion-PHP-FizzBuzz/coverage)
 
 Introduction
 ------------
