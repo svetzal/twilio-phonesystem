@@ -5,6 +5,10 @@ define("EOL", "\n");
 // This should point to this script's absolute URL on the web
 define("SCRIPT_URL", "http://yourdomain.com/phone/index.php");
 
+define("MAIN_MENU", SCRIPT_URL);
+define("CONFERENCE_MENU", SCRIPT_URL."?m=c");
+define("OUTGOING_MENU", SCRIPT_URL."?m=o");
+
 // The secret code to allow initiation of outgoing calls from your Twilio number
 define("OUTGOING_SECRET", "5678");
 
