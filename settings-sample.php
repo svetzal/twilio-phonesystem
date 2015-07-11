@@ -1,5 +1,7 @@
 <?php
 
+define("EOL", "\n");
+
 // This should point to this script's absolute URL on the web
 define("SCRIPT_URL", "http://yourdomain.com/phone/index.php");
 

@@ -7,8 +7,6 @@ require("inc/MenuRegistry.inc.php");
 require("inc/MenuDispatcher.inc.php");
 require("inc/MenuBuilder.inc.php");
 
-define("EOL", "\n");
-
 define("MAIN_MENU", SCRIPT_URL);
 define("CONFERENCE_MENU", SCRIPT_URL."?m=c");
 define("OUTGOING_MENU", SCRIPT_URL."?m=o");
