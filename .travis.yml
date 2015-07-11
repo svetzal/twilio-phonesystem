@@ -2,7 +2,7 @@ language: php
 php:
   - 5.5
 script:
-  - composer.phar install
+  - composer install
   - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests
 after_script:
   - vendor/bin/test-reporter
