@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__."../settings-sample.php");
+require_once(__DIR__."/../settings-sample.php");
 require_once(__DIR__ . "/../inc/ParameterParser.inc.php");
 
 class ParameterParserTest extends PHPUnit_Framework_TestCase {

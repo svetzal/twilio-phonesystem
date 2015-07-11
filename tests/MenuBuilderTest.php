@@ -1,5 +1,5 @@
 <?php
-require_once(__DIR__."../settings-sample.php");
+require_once(__DIR__."/../settings-sample.php");
 require_once(__DIR__."/../inc/MenuBuilder.inc.php");
 
 class MenuBuilderTest extends PHPUnit_Framework_TestCase {
