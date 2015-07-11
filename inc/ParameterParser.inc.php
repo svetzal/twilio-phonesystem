@@ -7,7 +7,8 @@ class ParameterParser {
     global $argv;
     if ($params) {
       $this->menuCode = $params['menuCode'];
-      $this->digits = $params['digits'];
+      if (array_key_exists('digits', $params))
+        $this->digits = $params['digits'];
     } else {
       if (PHP_SAPI === 'cli') {
         $this->menuCode = $argv[1];
