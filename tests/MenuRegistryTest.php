@@ -1,4 +1,5 @@
 <?php
+require_once(__DIR__."../settings-sample.php");
 require_once(__DIR__ . "/../inc/MenuRegistry.inc.php");
 require_once(__DIR__ . "/../inc/Menu.inc.php");
 
