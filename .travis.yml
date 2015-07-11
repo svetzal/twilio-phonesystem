@@ -1,6 +1,9 @@
 language: php
 php:
   - 5.5
-before_script:
-  - cp $TRAVIS_BUILD_DIR/settings-sample.php $TRAVIS_BUILD_DIR/settings.php
-script: phpunit tests
+script: phpunit --coverage-clover build/logs/clover.xml
+after_script:
+  - vendor/bin/test-reporter
+addons:
+  code_climate:
+    repo_token: 57587da2349a2bc47550cfbad3091ff5612ae18814c28a84b6c490006862c23f
