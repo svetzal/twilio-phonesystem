@@ -1,6 +1,8 @@
 Twilio Phone System
 ===================
 
+[![Code Climate](https://codeclimate.com/github/svetzal/twilio-phonesystem/badges/gpa.svg)](https://codeclimate.com/github/svetzal/twilio-phonesystem)
+
 Introduction
 ------------
 
