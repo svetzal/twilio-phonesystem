@@ -1,0 +1,6 @@
+suites:
+  default:
+    src_path: inc
+    spec_path: .
+    src_extension: .inc.php
+extensions: [RDM\CustomSuffix\Extension]
