@@ -10,7 +10,15 @@
     }
   ],
   "require-dev": {
+    "phpspec/phpspec": "~2.0",
     "phpunit/phpunit": "4.6.4",
+    "rdm/phpspec-customsuffix": "dev-master",
     "codeclimate/php-test-reporter": "dev-master"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-0": { "": "inc" }
   }
 }
