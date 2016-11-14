@@ -2,10 +2,10 @@
 
 require("settings.php");
 
-require("inc/ParameterParser.inc.php");
-require("inc/MenuRegistry.inc.php");
-require("inc/MenuDispatcher.inc.php");
-require("inc/MenuBuilder.inc.php");
+require("src/ParameterParser.inc.php");
+require("src/MenuRegistry.inc.php");
+require("src/MenuDispatcher.inc.php");
+require("src/MenuBuilder.inc.php");
 
 header("content-type: text/xml");
 

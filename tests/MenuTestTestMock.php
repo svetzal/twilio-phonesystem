@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__."/../settings-sample.php");
-require_once(__DIR__ . "/../inc/Menu.inc.php");
+require_once(__DIR__ . "/../src/Menu.inc.php");
 
 class MenuTestMock extends Menu {
     function __construct() {
