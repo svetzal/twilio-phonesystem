@@ -1,7 +1,5 @@
 <?php
 
-require_once(__DIR__ . "/../Menu.php");
-
 class OutgoingMenu extends Menu {
 
     function __construct() {
