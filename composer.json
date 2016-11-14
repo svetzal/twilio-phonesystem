@@ -19,6 +19,6 @@
     "bin-dir": "bin"
   },
   "autoload": {
-    "psr-0": { "": "inc" }
+    "psr-0": { "": "src" }
   }
 }
