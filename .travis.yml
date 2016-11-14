@@ -3,9 +3,9 @@ php:
   - 5.5
 script:
   - composer install
-  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests
+  - bin/phpspec run
 after_script:
-  - vendor/bin/test-reporter
+  - bin/test-reporter
 addons:
   code_climate:
     repo_token: 57587da2349a2bc47550cfbad3091ff5612ae18814c28a84b6c490006862c23f

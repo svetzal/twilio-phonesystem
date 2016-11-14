@@ -2,5 +2,9 @@ suites:
   default:
     src_path: src
     spec_path: .
-    src_extension: .inc.php
-extensions: [RDM\CustomSuffix\Extension]
+extensions:
+  PhpSpecCodeCoverage\CodeCoverageExtension:
+    format:
+      - clover
+    output:
+      clover: build/logs/clover.xml
