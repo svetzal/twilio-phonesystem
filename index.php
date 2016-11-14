@@ -1,11 +1,8 @@
 <?php
 
-require("settings.php");
+require( __DIR__ . '/settings.php');
 
-require("src/ParameterParser.inc.php");
-require("src/MenuRegistry.inc.php");
-require("src/MenuDispatcher.inc.php");
-require("src/MenuBuilder.inc.php");
+require( __DIR__ . '/vendor/autoload.php');
 
 header("content-type: text/xml");
 

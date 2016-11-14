@@ -1,7 +1,7 @@
 <?php
 require_once(__DIR__."/../settings-sample.php");
-require_once(__DIR__ . "/../src/MenuRegistry.inc.php");
-require_once(__DIR__ . "/../src/Menu.inc.php");
+require_once(__DIR__ . "/../src/MenuRegistry.php");
+require_once(__DIR__ . "/../src/Menu.php");
 
 class MenuRegistryTest extends PHPUnit_Framework_TestCase {
 

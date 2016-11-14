@@ -1,5 +1,5 @@
 <?php
-require_once("Menu.inc.php");
+require_once("Menu.php");
 
 require("src/menus/OutgoingMenu.inc.php");
 

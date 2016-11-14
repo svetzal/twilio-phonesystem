@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . "/../Menu.inc.php");
+require_once(__DIR__ . "/../Menu.php");
 
 class OutgoingMenu extends Menu {
 
