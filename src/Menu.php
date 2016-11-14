@@ -1,5 +1,4 @@
 <?php
-require_once(__DIR__ . "/TwilioResponseBuilder.php");
 
 class Menu {
     protected $menuCode;

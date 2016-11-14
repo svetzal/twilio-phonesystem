@@ -1,7 +1,4 @@
 <?php
-require_once("Menu.php");
-
-require("src/menus/OutgoingMenu.inc.php");
 
 class MenuBuilder {
     private $responseBuilder;

@@ -2,8 +2,6 @@
 
 namespace spec;
 
-require_once(__DIR__."/../settings-sample.php");
-
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

@@ -12,7 +12,8 @@
   "require-dev": {
     "phpspec/phpspec": "^3.0",
     "codeclimate/php-test-reporter": "dev-master",
-    "henrikbjorn/phpspec-code-coverage": "^3.0"
+    "henrikbjorn/phpspec-code-coverage": "^3.0",
+    "symfony/yaml": "^3.1"
   },
   "config": {
     "bin-dir": "bin"
