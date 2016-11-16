@@ -2,7 +2,7 @@
 
 namespace spec;
 
-use Menu;
+use \Menu;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

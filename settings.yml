@@ -1,1 +1,11 @@
 script_url: "http://yourdomain.com/phone/index.php"
+
+sales_cell: 9059250709
+support_cell: 9059250709
+
+conference_bridge:
+  admin_code: 9217
+  attendee_code: 2319
+
+outgoing_bridge:
+  secret: 3179

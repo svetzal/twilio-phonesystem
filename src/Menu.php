@@ -7,9 +7,14 @@ class Menu {
     protected $defaultDigitHandler = null;
     protected $mainHandler = null;
 
-    function __construct($menuCode) {
+    function __construct(Settings $settings, $menuCode) {
+        $this->settings = $settings;
         $this->menuCode = $menuCode;
         $this->responseBuilder = new TwilioResponseBuilder();
+    }
+
+    function url() {
+        return $this->settings->vars->script_url . '?m=' . $this->menuCode;
     }
 
     function registerDigitHandler($digits, $handler) {
