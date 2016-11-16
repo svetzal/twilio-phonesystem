@@ -5,6 +5,7 @@ namespace spec;
 use \Menu;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
+use Settings;
 
 class MenuRegistrySpec extends ObjectBehavior {
     function it_is_initializable() {
@@ -12,8 +13,10 @@ class MenuRegistrySpec extends ObjectBehavior {
     }
 
     function it_should_register_and_retrieve_menus() {
-        $menu1 = new Menu('1');
-        $menu2 = new Menu('2');
+        $settings = new Settings();
+
+        $menu1 = new Menu($settings, '1');
+        $menu2 = new Menu($settings, '2');
 
         $this->addMenu($menu1);
         $this->addMenu($menu2);
