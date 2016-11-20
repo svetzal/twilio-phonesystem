@@ -1,7 +1,29 @@
 script_url: "http://yourdomain.com/phone/index.php"
 
-sales_cell: 9059250709
-support_cell: 9059250709
+stacey_cell1: &stacey_cell1 9059250709
+stacey_cell2: &stacey_cell2 2163552924
+stacey_cell: &stacey_cell
+  - *stacey_cell1
+  - *stacey_cell2
+stacey_email: &stacey_email svetzal@mojility.ca
+
+patrick_cell: &patrick_cell 2896889261
+patrick_email: &patrick_email psalmers@mojility.ca
+
+everyone_cell: &everyone_cell
+  - *stacey_cell1
+  - *stacey_cell2
+  - *patrick_cell
+
+everyone_email: &everyone_email
+  - *stacey_email
+  - *patrick_email
+
+sales_cell: *stacey_cell
+sales_email: sales@mojility.ca
+
+support_cell: *everyone_cell
+support_email: support@mojility.ca
 
 conference_bridge:
   admin_code: 9217
@@ -9,3 +31,30 @@ conference_bridge:
 
 outgoing_bridge:
   secret: 3179
+
+chasers:
+  operator:
+    ext: 0
+    phones: *everyone_cell
+    emails: *everyone_email
+    no_answer_message: Sorry, nobody is available at this time. Please leave a message and we will return your call as soon as possible.
+  sales:
+    ext: 1
+    phones: *stacey_cell
+    emails: *sales_email
+    no_answer_message: Sorry, our sales staff is unavailable right now. Please leave a message and we will return your call as soon as possible.
+  support:
+    ext: 2
+    phones: *everyone_cell
+    emails: *support_email
+    no_answer_message: Sorry, our support staff is unavailable right now. Please leave a message and we will return your call as soon as possible.
+  stacey:
+    ext: 204
+    phones: *stacey_cell
+    emails: *stacey_email
+    no_answer_message: Sorry, Stacey is unavailable at this time. Please leave a message and she will return your call as soon as possible.
+  patrick:
+    ext: 205
+    phones: *patrick_cell
+    emails: *patrick_email
+    no_answer_message: Sorry, Patrick is unavailable at this time. Please leave a message and he will return your call as soon as possible.

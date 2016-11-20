@@ -4,17 +4,11 @@ use Menus\ConferenceMenu;
 use Menus\MainMenu;
 use Menus\OutgoingMenu;
 
-require( __DIR__ . '/settings.php');
-
 require( __DIR__ . '/vendor/autoload.php');
 
 header("content-type: text/xml");
 
 $settings = new Settings();
-
-//print_r($settings->vars);
-//
-//exit(0);
 
 $params = new ParameterParser();
 

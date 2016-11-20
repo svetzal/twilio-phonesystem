@@ -41,7 +41,15 @@ class TwilioDirectiveBuilder {
         $d = '<Dial';
         $d .= ' timeout="' . $timeout . '"';
         if (isset($callerId)) $d .= ' callerId="' . $callerId . '"';
-        $d .= '>' . $number . '</Dial>';
+        $d .= '>';
+        if (is_array($number)) {
+            foreach($number as $n) {
+                $d .= "<Number>" . $n . "</Number>";
+            }
+        } else {
+            $d .= $number;
+        }
+        $d .= '</Dial>';
         array_push($this->directives, $d);
     }
 

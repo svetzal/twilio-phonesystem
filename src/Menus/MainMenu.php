@@ -9,33 +9,19 @@ class MainMenu extends Menu {
     function __construct(Settings $settings, ConferenceMenu $conferenceMenu, OutgoingMenu $outgoingMenu) {
         parent::__construct($settings, 'm');
 
-        $this->registerDigitHandler(
-            '0',
-            $this->responseBuilder->forward(
-                $settings->vars->support_cell,
-                "Sorry, nobody is available at this time. Please leave a message and we will return your call as soon as possible."
-            )
-        );
-
-        $this->registerDigitHandler(
-            '1',
-            $this->responseBuilder->forward(
-                $settings->vars->sales_cell,
-                "Sorry, our sales staff is unavailable right now. Please leave a message and we will return your call as soon as possible."
-            )
-        );
+        foreach($this->settings->chasers() as $name => $chaser) {
+            $this->registerDigitHandler(
+                $chaser['ext'],
+                $this->responseBuilder->forward(
+                    $chaser['phones'],
+                    $chaser['no_answer_message']
+                )
+            );
+        }
 
         $this->registerDigitHandler(
             '8',
             $this->responseBuilder->redirect(null, $conferenceMenu->url(), 0)
-        );
-
-        $this->registerDigitHandler(
-            EXTENSION_HACK,
-            $this->responseBuilder->forward(
-                SALES_CELL,
-                "Sorry, Stacey is unavailable at this time. Please leave a message and she will return your call as soon as possible."
-            )
         );
 
         $this->registerDigitHandler(
