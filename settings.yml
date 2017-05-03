@@ -20,10 +20,10 @@ everyone_email: &everyone_email
   - *patrick_email
 
 sales_cell: *stacey_cell
-sales_email: sales@mojility.ca
+sales_email: &sales_email sales@mojility.ca
 
 support_cell: *everyone_cell
-support_email: support@mojility.ca
+support_email: &support_email support@mojility.ca
 
 conference_bridge:
   admin_code: 9217

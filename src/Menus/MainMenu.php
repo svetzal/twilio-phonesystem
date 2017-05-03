@@ -14,7 +14,8 @@ class MainMenu extends Menu {
                 $chaser['ext'],
                 $this->responseBuilder->forward(
                     $chaser['phones'],
-                    $chaser['no_answer_message']
+                    $chaser['no_answer_message'],
+                    $name
                 )
             );
         }

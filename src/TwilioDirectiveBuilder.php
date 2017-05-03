@@ -53,8 +53,8 @@ class TwilioDirectiveBuilder {
         array_push($this->directives, $d);
     }
 
-    function record($maxLength = 120) {
-        array_push($this->directives, '<Record maxLength="' . $maxLength . '"/>');
+    function record($id, $maxLength = 120) {
+        array_push($this->directives, '<Record action="message.php?chaser=' . $id . '" maxLength="' . $maxLength . '"/>');
     }
 
     function say($message) {
