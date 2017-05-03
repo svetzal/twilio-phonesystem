@@ -1,13 +1,14 @@
 script_url: "http://yourdomain.com/phone/index.php"
+greeting_url: "http://yourdomain.com/phone/audio/greeting.mp3"
 
-stacey_cell1: &stacey_cell1 9059250709
-stacey_cell2: &stacey_cell2 2163552924
+stacey_cell1: &stacey_cell1 +19059250709
+stacey_cell2: &stacey_cell2 +12163552924
 stacey_cell: &stacey_cell
   - *stacey_cell1
   - *stacey_cell2
 stacey_email: &stacey_email svetzal@mojility.ca
 
-patrick_cell: &patrick_cell 2896889261
+patrick_cell: &patrick_cell +12896889261
 patrick_email: &patrick_email psalmers@mojility.ca
 
 everyone_cell: &everyone_cell
@@ -31,6 +32,7 @@ conference_bridge:
 
 outgoing_bridge:
   secret: 3179
+  outbound: +12892770709
 
 chasers:
   operator:

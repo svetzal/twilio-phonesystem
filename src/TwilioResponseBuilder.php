@@ -2,7 +2,12 @@
 
 class TwilioResponseBuilder {
 
-    function menuWithSpeech($message, $location = MAIN_MENU) {
+    function __construct(Settings $settings) {
+        $this->settings = $settings;
+    }
+
+    function menuWithSpeech($message, $location = null) {
+        if ($location === null) $location = $this->settings->vars->script_url;
         $t = $this->createTwilioDirectiveBuilder();
         $t->gatherWithSpeech($message, 2, $location);
         $t->say("Sorry, I didn't get your input.");
@@ -10,7 +15,8 @@ class TwilioResponseBuilder {
         return $t->render();
     }
 
-    function menuWithAudio($greeting, $location = MAIN_MENU) {
+    function menuWithAudio($greeting, $location = null) {
+        if ($location === null) $location = $this->settings->vars->script_url;
         $t = $this->createTwilioDirectiveBuilder();
         $t->gatherWithAudio($greeting, 2, $location);
         $t->say("Sorry, I didn't get your input.");
@@ -26,7 +32,8 @@ class TwilioResponseBuilder {
         return $t->render();
     }
 
-    function redirect($message = null, $location = MAIN_MENU, $pause = 1) {
+    function redirect($message = null, $location = null, $pause = 1) {
+        if ($location === null) $location = $this->settings->vars->script_url;
         $t = $this->createTwilioDirectiveBuilder();
         if (isset($message))
             $t->say($message);
@@ -35,7 +42,8 @@ class TwilioResponseBuilder {
         return $t->render();
     }
 
-    function outgoing($phone, $callerid = "+12892770709") {
+    function outgoing($phone, $callerid = null) {
+        if ($callerid === null) $callerid = $this->settings->outgoing_bridge()->outbound;
         $t = $this->createTwilioDirectiveBuilder();
         $t->dial($phone, 60, $callerid);
         return $t->render();
@@ -54,7 +62,7 @@ class TwilioResponseBuilder {
     }
 
     private function createTwilioDirectiveBuilder() {
-        return new TwilioDirectiveBuilder();
+        return new TwilioDirectiveBuilder($this->settings);
     }
 
 }

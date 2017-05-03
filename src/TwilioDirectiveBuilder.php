@@ -9,7 +9,8 @@ class TwilioDirectiveBuilder {
         return $bool ? 'true' : 'false';
     }
 
-    function gatherWithSpeech($message, $timeout = 2, $action = MAIN_MENU) {
+    function gatherWithSpeech($message, $timeout = 2, $action = null) {
+        if ($action === null) $action = $this->settings->vars->script_url;
         $d = '<Gather action="' . $action . '" timeout="' . $timeout . '">';
         $d .= '<Say voice="' . $this->voice . '">' . $message . '</Say>';
         $d .= '<Pause length="8"/>';
@@ -17,7 +18,8 @@ class TwilioDirectiveBuilder {
         array_push($this->directives, $d);
     }
 
-    function gatherWithAudio($play, $timeout = 2, $action = MAIN_MENU) {
+    function gatherWithAudio($play, $timeout = 2, $action = null) {
+        if ($action === null) $action = $this->settings->vars->script_url;
         $d = '<Gather action="' . $action . '" timeout="' . $timeout . '">';
         $d .= '<Play>' . $play . '</Play>';
         $d .= '<Pause length="8"/>';
@@ -65,7 +67,8 @@ class TwilioDirectiveBuilder {
         array_push($this->directives, '<Pause length="' . $length . '"/>');
     }
 
-    function redirect($location = MAIN_MENU) {
+    function redirect($location = null) {
+        if ($location === null) $location = $this->settings->vars->script_url;
         array_push($this->directives, '<Redirect>' . $location . '</Redirect>');
     }
 

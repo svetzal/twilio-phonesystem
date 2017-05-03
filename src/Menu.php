@@ -10,7 +10,7 @@ class Menu {
     function __construct(Settings $settings, $menuCode) {
         $this->settings = $settings;
         $this->menuCode = $menuCode;
-        $this->responseBuilder = new TwilioResponseBuilder();
+        $this->responseBuilder = new TwilioResponseBuilder($settings);
     }
 
     function url() {

@@ -35,7 +35,7 @@ class MainMenu extends Menu {
         );
 
         $this->registerMainHandler(
-            $this->responseBuilder->menuWithAudio('http://mojility.ca/phone/audio/greeting-2015-04-30.mp3', $this->url())
+            $this->responseBuilder->menuWithAudio($settings->vars->greeting_url, $this->url())
         );
 
     }
