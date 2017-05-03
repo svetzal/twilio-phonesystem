@@ -1,5 +1,4 @@
 <?php
-require_once(__DIR__ . "/TwilioDirectiveBuilder.php");
 
 class TwilioResponseBuilder {
 
@@ -19,12 +18,12 @@ class TwilioResponseBuilder {
         return $t->render();
     }
 
-    function forward($number, $message) {
+    function forward($number, $message, $id) {
         $t = $this->createTwilioDirectiveBuilder();
         $t->dial($number);
         $t->say($message);
-        $t->record();
-        return $t->render();;
+        $t->record($id);
+        return $t->render();
     }
 
     function redirect($message = null, $location = MAIN_MENU, $pause = 1) {
